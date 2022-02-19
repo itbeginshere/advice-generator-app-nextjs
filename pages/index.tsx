@@ -12,7 +12,6 @@ export default function Home() {
 
     const data = await res.json();
 
-
     setAdvice(data.slip);
   };
 
@@ -41,14 +40,12 @@ export default function Home() {
           <h6 className={styles.card__title}>Advice #{advice.id}</h6>
           <q className={styles.card__quote}>{advice.advice}</q>
           <div className={styles.card__divider}></div>
-          <div className={styles.card__row_centered}>
-            <div className={styles.button} onClick={handleButtonClick}>
-              <img
-                className={styles.button__icon}
-                src="/images/icon-dice.svg"
-                alt="Get random device"
-              />
-            </div>
+          <div className={styles.button} onClick={handleButtonClick}>
+            <img
+              className={styles.button__icon}
+              src="/images/icon-dice.svg"
+              alt="Get random device"
+            />
           </div>
         </div>
       </main>
