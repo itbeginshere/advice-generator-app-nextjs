@@ -16,15 +16,11 @@ export default function Home() {
   };
 
   useEffect(() => {
-    async function _() {
-      await getNewAdvice();
-    }
-
-    _();
+    getNewAdvice();
   }, []);
 
-  const handleButtonClick = async () => {
-    await getNewAdvice();
+  const handleButtonClick = () => {
+    getNewAdvice();
   };
 
   return (
