@@ -5,22 +5,18 @@ import styles from "../styles/Home.module.scss";
 import { IAdvice } from "../types/IAdvice";
 
 export default function Home() {
-  const [advice, setAdvice] = useState<IAdvice>({});
+  const [advice, setAdvice] = useState<IAdvice>({
+    advice:
+      "It is easy to sit up and take notice, what's difficult is getting up and taking action.",
+    id: 117,
+  });
 
-  const getNewAdvice = async () => {
+  const handleButtonClick = async () => {
     const res = await fetch("https://api.adviceslip.com/advice");
 
     const data = await res.json();
 
     setAdvice(data.slip);
-  };
-
-  useEffect(() => {
-    getNewAdvice();
-  }, []);
-
-  const handleButtonClick = () => {
-    getNewAdvice();
   };
 
   return (
